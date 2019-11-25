@@ -37,3 +37,6 @@ void loop() {
 
 ## License
 This project is licensed under the [MIT license](https://opensource.org/licenses/MIT)
+
+## Questions?
+If you have any questions feel free to contact Frank Bekema on frankbekema10@gmail.com or on github.
