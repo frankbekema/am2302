@@ -36,4 +36,4 @@ void loop() {
 ```
 
 ## License
-This project is licensed under the (MIT license)[https://opensource.org/licenses/MIT]
+This project is licensed under the [MIT license](https://opensource.org/licenses/MIT)
