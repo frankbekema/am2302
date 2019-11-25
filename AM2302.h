@@ -38,8 +38,6 @@ class AM2302 {
 private:
     //Variables
     int pin;
-    float humidity;
-    float temperature;
 
     //Functions
     int bitChangeListener(int check, int tries);
@@ -53,8 +51,6 @@ public:
 
     //Functions
     AM2302_res read();
-    float getHumidity();
-    float getTemperature();
 };
 
 #endif
