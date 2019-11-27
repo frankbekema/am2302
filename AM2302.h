@@ -39,6 +39,7 @@ private:
     //Variables
     int pin;
     unsigned long lastRead;
+    AM2302_res tempData;
 
     //Functions
     int bitChangeListener(int check, int tries);
