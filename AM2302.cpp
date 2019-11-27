@@ -32,6 +32,7 @@
 */
 AM2302::AM2302(int inputPin) {
     pin = inputPin;
+    lastRead = 0;
 }
 
 /*
@@ -137,6 +138,10 @@ bool AM2302::compareBits(int number1, int number2, int checkLength) {
     Read the temperature
 */
 AM2302_res AM2302::read() {
+    //Apply interval of 2 seconds
+    if(lastRead + 2000 > millis()) {
+        delay(lastRead + 2000 - millis());
+    }
     //Send an request for getting the bits from the sensor
     pinMode(pin, OUTPUT);
     //10 ms low
@@ -161,5 +166,6 @@ AM2302_res AM2302::read() {
     result.humidity = mergeBytes(byteRes[0], byteRes[1]) / 10.0;
     result.temperature = mergeBytes(byteRes[2], byteRes[3]) / 10.0;
     result.correct = compareBits(byteRes[0] + byteRes[1] + byteRes[2] + byteRes[3], byteRes[4], 8);
+    lastRead = millis();
     return result;
 }

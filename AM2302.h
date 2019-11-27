@@ -38,6 +38,7 @@ class AM2302 {
 private:
     //Variables
     int pin;
+    unsigned long lastRead;
 
     //Functions
     int bitChangeListener(int check, int tries);
